@@ -77,7 +77,6 @@ class DragonParadiseViewModel: ObservableObject {
         }
     }
     
-    
     func checkWin() {
         winningPositions = []
         var totalWin = 0
