@@ -1,10 +1,3 @@
-//
-//  CasDrevniyTests.swift
-//  CasDrevniyTests
-//
-//  Created by Артём Коротков on 20.11.2025.
-//
-
 import XCTest
 @testable import CasDrevniy
 
@@ -32,5 +25,4 @@ final class CasDrevniyTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

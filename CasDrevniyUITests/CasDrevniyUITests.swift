@@ -1,10 +1,3 @@
-//
-//  CasDrevniyUITests.swift
-//  CasDrevniyUITests
-//
-//  Created by Артём Коротков on 20.11.2025.
-//
-
 import XCTest
 
 final class CasDrevniyUITests: XCTestCase {
