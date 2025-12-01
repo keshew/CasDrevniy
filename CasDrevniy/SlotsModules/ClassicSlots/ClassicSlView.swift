@@ -86,6 +86,7 @@ struct ClassicSlView: View {
                         }
                         .cornerRadius(16)
                 }
+                .padding(.top,  UIScreen.main.bounds.width > 1200 ? 15 : 0)
                 
                 ScrollView(showsIndicators: false) {
                     VStack {
