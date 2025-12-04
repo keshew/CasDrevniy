@@ -110,15 +110,15 @@ class GameSpriteKit: SKScene, SKPhysicsContactDelegate {
     
     func createObstacles() {
         let startRowCount = 2
-        let numberOfRows = size.width > 1200 ? 6 : 5
-        let obstacleSize = CGSize(width: size.width > 1200 ? 30 : 30, height: size.width > 1200 ? 30 : 20)
-        let horizontalSpacing: CGFloat = size.width > 1200 ? 90 : 95
+        let numberOfRows = size.width > 1000 ? 6 : 5
+        let obstacleSize = CGSize(width: size.width > 1000 ? 30 : 30, height: size.width > 1000 ? 30 : 20)
+        let horizontalSpacing: CGFloat = size.width > 1000 ? 90 : 95
         
         for row in 0..<numberOfRows {
             let countInRow = startRowCount + row
             let totalWidth = CGFloat(countInRow) * (obstacleSize.width + horizontalSpacing) - horizontalSpacing
             let xOffset = (size.width - totalWidth) / 2 + obstacleSize.width / 2
-            let yPosition = (UIScreen.main.bounds.width > 1200 ? size.height / 1.35 : size.height / 1.32) - CGFloat(row) * (obstacleSize.height + UIScreen.main.bounds.width > 1200 ? 105 : 60)
+            let yPosition = (UIScreen.main.bounds.width > 1000 ? size.height / 1.35 : size.height / 1.32) - CGFloat(row) * (obstacleSize.height + UIScreen.main.bounds.width > 1200 ? 105 : 60)
             
             for col in 0..<countInRow {
                 let obstacle = SKSpriteNode(imageNamed: "obstacle")
@@ -196,7 +196,7 @@ class GameSpriteKit: SKScene, SKPhysicsContactDelegate {
         ballsInPlay = 0
         
         let ball = SKSpriteNode(imageNamed: "ball")
-        ball.size = CGSize(width: size.width > 1200 ? 25 : 35, height: 22)
+        ball.size = CGSize(width: size.width > 1000 ? 25 : 35, height: 22)
         ball.position = CGPoint(x: size.width / 2,
                                 y: size.height / 1.15)
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 3)
@@ -273,7 +273,7 @@ class GameSpriteKit: SKScene, SKPhysicsContactDelegate {
     func createBall(atIndex index: Int) {
         
         let ball = SKSpriteNode(imageNamed: "ball")
-        ball.size = CGSize(width: size.width > 1200 ? 25 : 35, height: 22)
+        ball.size = CGSize(width: size.width > 1000 ? 25 : 35, height: 22)
         ball.position = CGPoint(x: size.width / 2,
                                 y: size.height / 1.15)
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 3)
@@ -413,7 +413,7 @@ struct PlinkoView: View {
                     VStack {
                         Rectangle()
                             .fill(Color(red: 20/255, green: 20/255, blue: 31/255).opacity(0.95))
-                            .frame(width: UIScreen.main.bounds.width > 1200 ? 550 : 450, height: UIScreen.main.bounds.width > 1200 ? 450 : 310)
+                            .frame(width: UIScreen.main.bounds.width > 1000 ? 550 : 450, height: UIScreen.main.bounds.width > 1000 ? 450 : 310)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 12)
                                     .stroke(Color(red: 169/255, green: 1/255, blue: 255/255).opacity(0.3), lineWidth: 2)
@@ -427,10 +427,10 @@ struct PlinkoView: View {
                                                         .stroke(Color(red: 6/255, green: 182/255, blue: 212/255).opacity(0.5), lineWidth: 2)
                                                         .overlay {
                                                             SpriteView(scene: viewModel.createGameScene(gameData: gameModel), options: [.allowsTransparency])
-                                                                .frame(width: UIScreen.main.bounds.width > 1200 ? 350 : 250, height: UIScreen.main.bounds.width > 1200 ? 300 : 180)
+                                                                .frame(width: UIScreen.main.bounds.width > 1000 ? 350 : 250, height: UIScreen.main.bounds.width > 1000 ? 300 : 180)
                                                         }
                                                 }
-                                                .frame(width: UIScreen.main.bounds.width > 1200 ? 350 : 250, height: UIScreen.main.bounds.width > 1200 ? 300 : 190)
+                                                .frame(width: UIScreen.main.bounds.width > 1000 ? 350 : 250, height: UIScreen.main.bounds.width > 1000 ? 300 : 190)
                                                 .cornerRadius(16)
                                             
                                             HStack(spacing: 20) {
