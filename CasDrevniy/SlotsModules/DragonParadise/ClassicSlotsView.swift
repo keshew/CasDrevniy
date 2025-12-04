@@ -15,7 +15,7 @@ struct ClassicSlotsView: View {
                     Rectangle()
                         .fill(LinearGradient(colors: [Color(red: 10/255, green: 10/255, blue: 15/255),
                                                       Color(red: 18/255, green: 18/255, blue: 33/255)], startPoint: .top, endPoint: .bottom))
-                        .frame(height: UIScreen.main.bounds.width > 1200 ? 95 : 65)
+                        .frame(height: UIScreen.main.bounds.width > 1000 ? 95 : 65)
                     
                     Rectangle()
                         .fill(Color(red: 255/255, green: 215/255, blue: 0/255))
@@ -86,7 +86,7 @@ struct ClassicSlotsView: View {
                         }
                         .cornerRadius(16)
                 }
-                .padding(.top,  UIScreen.main.bounds.width > 1200 ? 15 : 0)
+                .padding(.top,  UIScreen.main.bounds.width > 1000 ? 15 : 0)
                 
                 ScrollView(showsIndicators: false) {
                     VStack {

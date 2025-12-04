@@ -36,7 +36,7 @@ struct MenuView: View {
                     Rectangle()
                         .fill(LinearGradient(colors: [Color(red: 10/255, green: 10/255, blue: 15/255),
                                                       Color(red: 18/255, green: 18/255, blue: 33/255)], startPoint: .top, endPoint: .bottom))
-                        .frame(height: UIScreen.main.bounds.width > 1200 ? 95 : 65)
+                        .frame(height: UIScreen.main.bounds.width > 1000 ? 95 : 65)
                     
                     Rectangle()
                         .fill(Color(red: 255/255, green: 215/255, blue: 0/255))
@@ -47,10 +47,20 @@ struct MenuView: View {
             
             VStack(spacing: 7) {
                 HStack {
-                    Text("NAME GAME")
-                        .font(.custom("PaytoneOne-Regular", size: 20))
-                        .foregroundStyle(Color(red: 255/255, green: 215/255, blue: 0/255))
-                        .shadow(color: Color(red: 255/255, green: 215/255, blue: 0/255), radius: 10)
+                    Button(action: {
+                        soundManager.toggleMusic()
+                        
+                    }) {
+                        Circle()
+                            .fill(Color(red: 255/255, green: 215/255, blue: 0/255))
+                            .frame(width: 30, height: 30)
+                            .overlay {
+                                Image(systemName: soundManager.isMusicEnabled ? "speaker.wave.3" : "speaker.slash.fill")
+                                    .font(.system(size: 14))
+                                    .foregroundStyle(.black)
+                            }
+                            .shadow(color: .purple, radius: 10)
+                    }
                     
                     Spacer()
                     

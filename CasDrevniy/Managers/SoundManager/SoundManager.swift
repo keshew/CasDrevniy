@@ -24,7 +24,7 @@ class SoundManager: ObservableObject {
     }
     
     @Published var isSoundEnabled: Bool = true
-    @Published var isMusicEnabled: Bool = true
+    @Published var isMusicEnabled: Bool = UserDefaults.standard.bool(forKey: "isMusicOn")
 
     init() {
         loadBackgroundMusic()
@@ -127,5 +127,6 @@ class SoundManager: ObservableObject {
         } else {
             stopBackgroundMusic()
         }
+        UserDefaults.standard.set(isMusicEnabled, forKey: "isMusicOn")
     }
 }

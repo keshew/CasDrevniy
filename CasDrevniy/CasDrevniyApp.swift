@@ -10,6 +10,7 @@ struct CasDrevniyApp: App {
         if !UserDefaults.standard.bool(forKey: key) {
             stats.addCoins(5000)
             UserDefaults.standard.set(true, forKey: key)
+            UserDefaults.standard.set(true, forKey: "isMusicOn")
         }
     }
     
